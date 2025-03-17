@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="messenger.js"></script>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="user">Username: </p>
+
+<h1>Send Message</h1>
+<br>
+
+<form id="form1" method="get" action="http://localhost:8080/message" target="dummyframe">
+    Username:
+    <br>
+    <input class="form1" type="text" name="username" value=""><br/>
+    Password:
+    <br>
+    <input class="form1" type="text" name="password" value=""><br/>
+
+    <button type="button" onclick="getMessages()">Check Inbox</button>
+
+</form>
+
+<br>
+<br>
+<h1>Inbox</h1>
+<br>
+
+<form id="form2" method="post" action="http://localhost:8080/message" target="dummyframe">
+    Target User:
+    <br>
+    <input class="form2" type="text" name="user" value=""><br/>
+    Message:
+    <br>
+    <input class="form2" type="text" name="text" value=""><br/>
+
+    <button type="button" onclick="sendMessage()">Send</button>
+
+</form>
+
+<br>
+<br>
+<h1>Register User</h1>
+<br>
+
+<form id="form3" method="post" action="http://localhost:8080/user" target="dummyframe">
+    Username:
+    <br>
+    <input class="form3" type="text" name="username" value=""><br/>
+    Password:
+    <br>
+    <input class="form3" type="password" name="password" value=""><br/>
+
+    <button type="button" onclick="register()">Register</button>
+</form>
+</body>
+</html>
