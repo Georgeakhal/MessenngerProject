@@ -1,0 +1,17 @@
+CREATE TABLE public."user"
+(
+    username character varying(50) COLLATE pg_catalog."default" NOT NULL,
+    password character varying(50) COLLATE pg_catalog."default",
+    CONSTRAINT user_pkey PRIMARY KEY (username)
+);
+
+CREATE TABLE public.message
+(
+    "user" character varying COLLATE pg_catalog."default",
+    text character varying COLLATE pg_catalog."default",
+    CONSTRAINT message_user_fkey FOREIGN KEY ("user")
+        REFERENCES public."user" (username) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+        NOT VALID
+);
